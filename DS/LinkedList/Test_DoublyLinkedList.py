@@ -12,6 +12,7 @@ class StartNode:
 
 
 nodeClass = StartNode
+
 if hasattr(program, "Node"):
     nodeClass = program.Node
 
