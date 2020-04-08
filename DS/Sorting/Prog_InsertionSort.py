@@ -18,5 +18,5 @@ def swap(i, j, array):
     array[i], array[j] = array[j], array[i]
 
 
-array = [8, 5, 2, 9, 5, 6, 3]
-print(insertionSort(array))
+""" array = [8, 5, 2, 9, 5, 6, 3]
+print(insertionSort(array)) """
