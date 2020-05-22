@@ -128,4 +128,28 @@ def accessDict():
 
 def removeDict():
     dictionary = {5: 'Welcome', 6: 'To', 7: 'Python',
-                  'A': {1: ''}}
+                  'A': {1: 'Sample', 2: 'Dictionary'},
+                  'B': {1: 'To', 2: 'Remove item'}
+                  }
+    print(dictionary)
+    del dictionary['B'][2]
+    print(dictionary)
+    popElement = dictionary.pop('A')
+    print(str(popElement))
+    # print(str(dictionary))
+    popElement = dictionary.popitem()
+    print(str(popElement))
+    # print(str(dictionary))
+    popElement = dictionary.popitem()
+    print(str(popElement))
+    print(str(dictionary))
+    popElement = dictionary.popitem()
+    print(str(popElement))
+    popElement = dictionary.popitem()
+    print(str(popElement))
+    popElement = dictionary.popitem()
+    print(str(popElement))
+    print(dictionary)
+
+
+# removeDict()
