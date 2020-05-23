@@ -153,3 +153,76 @@ def removeDict():
 
 
 # removeDict()
+
+
+def shallowCopy():
+    dictionary = {1: 'Namasthe', 2: 'Sri'}
+    newDict = dictionary.copy()
+    newDict.clear()
+    print('Original ', dictionary)
+    print('New ', newDict)
+
+
+# shallowCopy()
+
+def deepCopy():
+    dictionary = {1: 'Namasthe', 2: 'Sri'}
+    newDict = dictionary
+    newDict.clear()
+    print('Original ', dictionary)
+    print('New ', newDict)
+
+
+# deepCopy()
+
+def updateDict():
+    dictionary = {'A': 'First', 'B': 'Second'}
+    dictionary2 = {'B': 'Updated Value'}
+    print('Original ', dictionary)
+    dictionary.update(dictionary2)
+    print('Updated ', dictionary)
+
+    # Duplicate key in dictionary but updates the key value same as update
+    dictionary = {'A': 'One', 'B': 'Two', 'C': 'Three', 'C': 3}
+    print(dictionary)
+
+    dictionary = {'A': 1}
+    dictionary.update(B=2, C=3)
+    print(dictionary)
+
+
+# updateDict()
+
+# setdefault returns value of key
+def setDefaultDict():
+    dictionary = {'A': 'One', 'B': 'Two'}
+    val = dictionary.setdefault('B')
+
+    print(dictionary)
+    print(val)
+
+    val = dictionary.setdefault('C')
+    print(val)
+    print(dictionary)
+    val = dictionary.setdefault('D', 'Four')
+    print(val)
+    print(dictionary)
+
+
+# setDefaultDict()
+
+def dictKeys():
+    dictionary = {1: 'One', 2: 'Two'}
+    dictionary.update(six=6)
+    print(dictionary.keys())
+    emptyDict = {}
+    print(emptyDict.keys())
+    # dictionary.update(3='Three')
+    dictionary.update({4: 'Four'})
+    print(dictionary.keys())
+    dictionary.update(B=2, C=3)
+    print(dictionary.keys())
+
+
+# dictKeys()
+
