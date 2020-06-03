@@ -33,9 +33,8 @@ print(c)
 print(d)
  """
 
+
 # Interchange elements using starred expression and mandatory expression
-
-
 def interchange4(array):
     first, *middle, last = array
     array = [last, *middle, first]
