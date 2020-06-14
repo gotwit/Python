@@ -1,3 +1,4 @@
+import functools
 """ For example :
 
 lst  =  [x ** 2  for x in range (1, 11)   if  x % 2 == 1] 
@@ -74,3 +75,19 @@ print(lst_9_5_2)
 
 lst_9_5_1 = lst[9:4:-1]
 print(lst_9_5_1)
+
+lst = filter(lambda x: x % 2 == 1, range(1, 20))
+print(list(lst))
+
+lst = filter(lambda x: x %
+             5 == 0, [x ** 2 for x in range(2, 11) if x % 2 == 1])
+print(list(lst))
+
+# A range is from >= start and <= end (excluding)
+print(list(range(-5, 5)))
+lst = filter(lambda x: x < 0, range(-5, 5))
+print(list(lst))
+
+
+#  implementing max() function, using
+print(functools.reduce(lambda a, b: a if (a > b) else b, [7, 12, 45, 100, 15]))
