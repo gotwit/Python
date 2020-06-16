@@ -286,5 +286,4 @@ print('%(function) %(url)' %
 
 
 """ print(get_kusto_link('cdbsupport.kusto.windows.net:443',
-                     'Support', "RegionalCapacityAllNew() | extend Status = case((Region contains 'Germany North'), 'Restricted - EA Only', (Region contains 'Germany West Central'), 'Restricted - EA Only', (Region contains 'Central India'), 'Restricted - Existing Only', (Region contains 'South India'), 'Restricted - EA Only', (Region contains 'West India'), 'Restricted - EA Only', (Region contains 'North Europe'), 'Restricted - EA Only', (Region contains 'West Europe'), 'Restricted - Existing Only', (Region contains 'Australia East'), 'Restricted - EA Only', (Region contains 'UK West'), 'Restricted - EA Only', (Region contains 'UK South'), 'Restricted - Existing Only', (Region contains 'Southeast Asia'), 'Restricted - EA Only', (Region contains 'Canada East'), 'Restricted - Existing Only', (Region contains 'Norway East'), 'Restricted - Existing Only', (Region contains 'USGov Arizona'), 'Restricted - Existing Only', '')"))
- """
+                     'Support', "")) """
