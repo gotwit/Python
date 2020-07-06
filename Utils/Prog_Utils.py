@@ -3,6 +3,47 @@ def getList():
     n = int(input("Enter the size of list: "))
 
     for i in range(0, n):
-        e = int(input("Enter an element: "))
-        lst.append(e)
+        element = None
+        try:
+            element = input("Enter an element: ")
+        except Exception as e:
+            print(f"Exception: {e}")
+        lst.append(element)
+    return lst
+
+def getIntList():
+    lst = []
+    n = int(input("Enter the size of list: "))
+
+    for i in range(0, n):
+        element = None
+        try:
+            element = int(input("Enter an element: "))
+        except Exception as e:
+            print(f"Exception: {e}")
+        lst.append(element)
+    return lst
+
+def funcType(name, x):
+    switch = {
+        int: lambda x: int(x),
+        float: lambda x: float(x),
+        str: lambda x: str(x)
+    }
+    default = None
+    return switch.get(name, default)
+
+def getListV2():
+    lst = []
+    n = int(input("Enter the size of list: "))
+
+    for i in range(0, n):
+        element = None
+        try:
+            element = input("Enter an element: ")
+
+            element = funcType(element.__class__.__name__, element)
+        except Exception as e:
+            print(f"Exception: {e}")
+        lst.append(element)
     return lst
