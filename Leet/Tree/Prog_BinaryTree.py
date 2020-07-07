@@ -1,10 +1,10 @@
-try:
+""" try:
     import sys, os
     sys.path.append(os.getcwd())
 
     from Utils import Prog_Utils as u
 except Exception as e:
-    print("Exception: ", e)
+    print("Exception: ", e) """
 
 class Node:
     def __init__(self, val = 0, left = None, right = None):
@@ -12,9 +12,11 @@ class Node:
         self.left = left
         self.right = right
 
+
+
 class Tree:
-    def __init__(self):
-        pass
+    # def __init__(self):
+    #     pass
 
     def build(self, lst, root: Node, i, n) -> Node:
         if i < n:
@@ -32,6 +34,27 @@ class Tree:
             left_height = self.getHeightOrDepth(root.left)
             right_height = self.getHeightOrDepth(root.right)
         return max(left_height, right_height) + 1
+
+    
+    def inOrderTraversal(self, root: Node):
+        stack = []
+        nodes = []
+        current = root
+
+        while True:
+            if current is not None:
+                stack.append(current)
+                current = current.left
+        
+            elif len(stack) > 0:
+                current = stack.pop()
+                # print(current.val, end = " ")
+                nodes.append(current.val)
+                current = current.right
+            else:
+                break
+        # print('\n')
+        return nodes
 
     
     """ def build(self, lst) -> Node:
