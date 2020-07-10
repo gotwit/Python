@@ -7,6 +7,7 @@ try:
     # from ..Tree.Prog_BinaryTree import Tree, Node
     import Prog_BinaryTree as bt
     from collections import deque #deck or double ended queue
+    from queue import Queue
 except Exception as e:
     print(f"Exception: {e}")
 
@@ -23,11 +24,13 @@ class Solution:
         if s is None and t is None:
             return True
 
+        if s is None or t is None:
+            return False
+
         if s is not None and t is not None:
             return (s.val == t.val) and self.isIdentical(s.left, t.left) and self.isIdentical(s.right, t.right)
 
         return False
-
     
     def isIdenticalByDeque(self, t1: Node, t2: Node):
         if t1 is None and t2 is None:
@@ -58,6 +61,42 @@ class Solution:
                 deque2.append(second.right)
             elif first.right or second.right:
                 return False
+        return True
+
+    def isIdenticalByQueue(self, t1: Node, t2: Node):
+        if (t1 is None and t2 is None):
+            return True
+        if (t1 or t2):
+            return False
+
+        que1 = Queue()
+        que2 = Queue()
+
+        que1.put(t1)
+        que2.put(t2)
+
+        while (not que1.empty() and not que2.empty()):
+            first = que1.queue[0]
+            second = que2.queue[0]
+
+            if first.val != second.val:
+                return False
+
+            que1.get()
+            que2.get()
+
+            if first.left and second.left:
+                que1.put(first.left)
+                que2.put(second.left)
+            elif first.left or second.left:
+                return False
+            
+            if first.right and second.right:
+                que1.put(first.right)
+                que2.put(second.right)
+            elif first.right or second.right:
+                return False
+            
         return True
 
 
