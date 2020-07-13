@@ -35,6 +35,66 @@ class Tree:
             right_height = self.getHeightOrDepth(root.right)
         return max(left_height, right_height) + 1
 
+    def bfs(self, root: Node):
+        nodes = []
+
+        if root is None:
+            return nodes
+
+        que = Queue()
+        que.put(root)
+
+        while not que.empty():
+            node = que.queue[0]
+            que.get()
+
+            if not node:
+                nodes.append(node)
+            else:
+                nodes.append(node.value)
+
+                if node.left and node.right:
+                    que.put(node.left)
+                    que.put(node.right)
+
+                if node.left is None or node.right is None:
+                    if node.left:
+                        que.put(node.left)
+                        que.put(None)
+                    if node.right:
+                        que.put(None)
+                        que.put(node.right)
+        return nodes
+
+    def levelOrderTraversal(self, root: Node):
+        if root is None:
+            return
+
+        nodes = []
+        que = Queue()
+        que.put(root)
+
+        while not que.empty():
+            node = que.queue[0]
+
+            if node:
+                nodes.append(node.value)
+            else:
+                nodes.append(node)
+            que.get()
+
+            if node.left and node.right:
+                que.put(node.left)
+                que.put(node.right)
+
+            # if node.left is None or node.right is None:
+            #     if node.left:
+            #         que.put(node.left)
+            #         que.put(None)
+            #     if node.right:
+            #         que.put(None)
+            #         que.put(node.right)
+        return nodes
     
     def inOrderTraversal(self, root: Node):
         stack = []
