@@ -22,6 +22,44 @@ class Solution:
             i += 1
         return indices
 
+# O(n^2) time | O(1) space
+class Solution2:
+    def twoSum(self, nums, target):
+        n = len(nums)
+        indices = []
+        for i in range(0, n):
+            for j in range(i+1, n):
+                if nums[j] == (target - nums[i]):
+                    indices.append((i, j))
+        return indices
+
+
+class Solution3:
+    def twoSum(self, nums, target):
+        n = len(nums)
+        map = {}
+
+        for i in range(0, n):
+            map[nums[i]]=i
+        
+        for i in range(0, n):
+            complement = target - nums[i]
+
+            if complement in map and map.get(complement) != i:
+                return (i, map.get(complement))
+
+class Solution4:
+    def twoSum(self, nums, target):
+        n = len(nums)
+        map = {}
+
+        for i in range(0, n):
+            complement = target - nums[i]
+
+            if complement in map and map.get(complement) != i:
+                return (map.get(complement), i)
+            map[nums[i]] = i
+
 lst = []
 n = int(input("Enter the size of list: "))
 
@@ -29,6 +67,6 @@ for i in range(0, n):
     element = int(input(f"\nEnter {i} list element: "))
     lst.append(element)
 target = int(input("\nEnter a target to find indexes: "))
-sln = Solution()
+sln = Solution4()
 result = sln.twoSum(lst, target)
-print(f"{target} sum at indices {result}")
+print(f"{target} is at indices {result}")
