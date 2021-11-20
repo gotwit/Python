@@ -1,0 +1,1 @@
+{"SriRam": {"Name": "Ram Mandir", "Address": "Ram Janmabhoomi, Sai Nagar, Ayodhya, Uttar Pradesh 224123", "Contact": "08009522111"}, "SriKrishna": {"Name": "Shri Vrindavan Chandrodaya Temple", "Address": "Vrindavan, Shubham Rd, near Akshaya Patra Temple, Vrindavan, Uttar Pradesh 281121", "Contact": "07725977260"}}
