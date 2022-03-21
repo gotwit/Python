@@ -10,6 +10,8 @@ class Solution:
         digits = int(math.floor(logx))
         totalDigits = digits + 1
         mask = 10**digits #int(math.pow(10, digits)) # or use x**y
+        # mask = 10**(totalDigits - 1) #int(math.pow(10, digits)) # or use x**y
+
         length = int(totalDigits/2)
 
         for i in range(totalDigits//2):
@@ -21,7 +23,15 @@ class Solution:
             
             x = int(x % mask)
             x = int(x / 10)
+            # Simple divide mask by 10^no of digits removed
             mask = mask // 100
+
+            # Below code block could be used to find mask with added time complexity.
+            """ if x > 0:
+                logx = math.log10(x)
+                digits = int(math.floor(logx))
+                # totalDigits = digits + 1
+                mask = int(math.pow(10, digits)) """
 
         # print(digits)
 
