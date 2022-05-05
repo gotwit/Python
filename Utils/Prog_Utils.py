@@ -52,6 +52,9 @@ class Utils:
     # def __init__(self):
     #     pass
 
+    def getNoOfRuns(self):
+        return int(input("Enter no of test runs: "))
+
     def getMatrixSize(self):
         rows = int(input("Enter no of rows: "))
         columns = int(input("Enter no of columns: "))
