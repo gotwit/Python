@@ -47,3 +47,13 @@ def getListV2():
             print(f"Exception: {e}")
         lst.append(element)
     return lst
+
+class Utils:
+    # def __init__(self):
+    #     pass
+
+    def getMatrixSize(self):
+        rows = int(input("Enter no of rows: "))
+        columns = int(input("Enter no of columns: "))
+
+        return (rows, columns)
