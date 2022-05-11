@@ -6,11 +6,6 @@ while n > 0:
 
     for row in range(rows):
         for col in range(columns, row, -1):
-            print("*", end=" ")
+            print(col, end=" ")
         print()
     n = n - 1
-
-"""     for row in range(rows, 0, -1):
-        for col in range(row, 0, -1):
-            print("*", end=" ")
-        print() """
