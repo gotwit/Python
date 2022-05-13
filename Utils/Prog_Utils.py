@@ -1,3 +1,10 @@
+# Utility module
+
+uppercaseIndex = 65 # ASCII value of A
+lowercaseIndex = 97 # ASCII value of a
+numberIndex = 48 # ASCII value of 0
+toggleCharCase = 32 # lower to upper -32 and upper to lower +32
+
 def getList():
     lst = []
     n = int(input("Enter the size of list: "))
