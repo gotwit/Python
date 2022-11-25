@@ -79,4 +79,59 @@ for num in range(2, 10):
         continue
     print("Found an odd number %(n)d" % {'n': num})
  """
- 
+""" 
+def order(item):
+    match item:
+        case 1:
+            return "Break fast"
+        case 2:
+            return "Lunch"
+        case 3:
+            return "Snacks"
+        case 4:
+            return "Dinner"
+        case 5:
+            return "Desert"
+        case 6 | 7 | 8:
+            return "Late Dinner"
+        case _:
+            return "Sleep"
+
+while True:
+    n = int(input("Please enter your choice: "))
+    print("Choice ", n, ": ", order(n))
+    if n is 0:
+        break
+    continue 
+"""
+
+""" class KrishnaCalculator:
+    def add(self, a, b):
+        print(a+b)
+
+class RamaCalculator:
+    def add(self, a, b):
+        print(a+b) """
+
+
+class Calculator:
+    def add(self, a, b):
+        return a + b
+        # print(a+b)
+    # def substraction():
+    #     # pass
+    # def multiply():
+    #     # pass
+    # def division():def add(a, b):
+        # print(a+b)
+    #     # pass
+
+# def add(a, b):
+#         print(a+b)
+# add(2, 3)
+
+krishaCal = Calculator()
+print("Krisha add: ", krishaCal.add(1, 2))
+
+ramaCal = Calculator()
+print("Rama add: ", ramaCal.add(5, 4))
