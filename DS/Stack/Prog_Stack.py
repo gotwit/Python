@@ -83,13 +83,14 @@ if size > 0:
                     value = int(input("Enter a value: "))
                     lst = stk.push(value)
                     if lst is not None:
+                        print(value, "pushed to stack")
                         print(lst)
                     else:
                         print("Please increase stack size")
                 case 2:
                     item = stk.pop()
                     if item is not None:
-                        print("Removed value", item)
+                        print(item, "popped from stack")
                     else:
                         print("Stack has no elements to remove")
                 case 3:
