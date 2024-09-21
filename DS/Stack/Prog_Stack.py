@@ -3,7 +3,7 @@
 
 1. push() / insert() to insert an element into the Stack
 2. pop() / remove() to remove an element from the Stack
-3. top() / peek() to return an element from the stack_data
+3. top() / peek() to return an element from the Stack
 4. isEmpty() returns True if stack is empty else False
 5. isFull() returns True if stack is full else False
  """
@@ -11,13 +11,13 @@
 
 class Stack:
 
-
+    ''' Constructor to initialise'''
     def __init__(self, capacity=0):
         self.lst = []
         self.capacity = capacity
         self.top = -1
 
-
+    """ push() / insert() to insert an element into the Stack"""
     def push(self, value):
         if self.capacity != (self.top + 1):
             self.lst.append(value)
@@ -26,7 +26,7 @@ class Stack:
         else:
             return None
 
-
+    """ pop() / remove() to remove an element from the Stack"""
     def pop(self):
         if self.top != -1:
             item = self.lst.pop()
@@ -35,7 +35,7 @@ class Stack:
         else:
             return None
 
-
+    ''' top() / peek() to return an element from the Stack'''
     def peek(self):
         if self.top != -1:
             index = self.top
@@ -43,15 +43,15 @@ class Stack:
         else:
             return None
 
-
+    ''' isEmpty() returns True if stack is empty else False'''
     def isEmpty(self) -> bool:
-        return self.top == -1
+        return self.top < 0
 
-
+    ''' isFull() returns True if stack is full else False'''
     def isFull(self) -> bool:
         return self.capacity == (self.top + 1)
 
-
+    """ To display the elements of the stack"""
     def show(self):
         return self.lst
 
@@ -67,16 +67,20 @@ if size > 0:
 
     while n > 0:
         try:
-            status = int(input("""
+            choice = int(input("""
         Enter 0 to print stack
         Enter 1 to push
         Enter 2 to pop
         Enter 3 to peek
         Enter 4 to check stack is empty
         Enter 5 to check stack is full
+        Enter -1 to exit
         """))
 
-            match status:
+            match choice:
+                case -1:
+                    print("exited")
+                    break
                 case 0:
                     print("Stack :", stk.show())
                 case 1:
@@ -105,8 +109,7 @@ if size > 0:
                 case 5:
                     isFull = stk.isFull()
                     print("Stack is full" if isFull else "Stack is not full")
-                case _:
-                    print("Please enter valid choice")
+
 
             n -= 1
         except ValueError:
